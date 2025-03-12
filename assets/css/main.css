@@ -1327,7 +1327,7 @@ html {
 }
 
 .dropdown {
-  padding-top: 54px;
+  padding-top: 500px;
   position: absolute;
   left: 37px;
   width: min(1240px, 100%);
@@ -1406,6 +1406,12 @@ html {
   grid-template-columns: repeat(3, 1fr);
   position: absolute;
   inset: 0 0 0 292px;
+}
+.sub-menu--not-main {
+  inset: initial;
+  display: grid;
+  position: initial;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /*# sourceMappingURL=main.css.map */
