@@ -1,12 +1,13 @@
 @use "../abstracts";
 .dropdown {
-  padding-top: 500px;
+  padding-top: 54px;
   position: absolute;
-  left: 37px;
+  left: 0px;
   width: min(1240px, 100%);
   display: none;
   &__inner {
-    padding: 30px;
+    --inner-padding: 30px;
+    padding: var(--inner-padding);
     position: relative;
     border-radius: 20px;
     background: var(--Secondary-Color-Background, var(--dropdown-bg));
@@ -21,13 +22,12 @@
   }
 }
 .top-menu {
-  --max-iner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  width: 1240px;
+  height: 582px;
   position: relative;
-  height: 100%;
   &__main {
-    height: var(--max-iner-height);
-    width: 292px;
     height: 100%;
+    width: 292px;
     border-right: 1px solid #d2d1d6;
     overflow-y: auto;
   }

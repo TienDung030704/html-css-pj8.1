@@ -2,6 +2,7 @@
   background: var(--header-bg-color);
 }
 .header-top {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 30px 0px;
@@ -27,11 +28,7 @@
   align-items: center;
   column-gap: 30px;
   margin-left: 144px;
-  &__row {
-    display: flex;
-    align-items: center;
-    column-gap: 6px;
-  }
+
   &__row:hover .dropdown {
     display: block;
   }
@@ -99,3 +96,54 @@
     cursor: pointer;
   }
 }
+/* dc roi day nhe 
+ủa là bị sao ta =))
+  // &__row {
+  //   display: flex;
+  //   align-items: center;
+  //   column-gap: 6px;
+  // }
+  do flex nayno can len giua 
+  em thay chua 
+  dâ rồi ạ 
+  oki nhe a
+  à anh cho em hỏi không biết có cách nào mà tính cái width bên dropdown mà kh cần dùng calc tính kh ạ tại cách đó em thấy khó hỉu =))
+  kiểu có cách nào khác mà kh cần dùng hàm calc kh á anh
+      --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding)* 2);
+      cai nay af 
+      dạ đr
+      tại anh sơn nói nhanh quá em kh hi2bnh dung ra đc tua lại cũng mấy lần r ạ =))
+      chi co set cung thoi n
+      eu là nu61 sét cứng là bnhieu ạ xem figma is height: 582px; ddaay =))
+      là nếu mình kh tính v thì set cứng width height luôn hả a 
+      u
+      CÒn cái padding 30px thì sao ta =)) em de width voi height lam sao cho co car padding 30px no van laf 582px nhe la dc
+      nếu mà thêm 30px nx thì cả 2 giá trị nó sẽ bị thay đổi chứ ạ ko nos tinh taon lam sao cho vua 528px maf  
+      hien tai cua em height 522px r day
+      nma nếu dùng cách vậy thì để nó ra 522 thì nó phải dùng calc để tính toán mà 
+      day thay y het vay la xong 
+      à dạ vậy th để em sửa lại cho nó sét cứng cho dễ =))
+      u nhe 
+      à cái bên tay phải ngoài cùng nó bị dính sát r bh em thêm padding cho cái inner là nó cách ra đc đk ạ
+      u 
+      à dạ rồi ạ cái dự án 8 này em thấy khó vs em quá =))
+      xem lai nhieu lan ms lam dc  nha em oi 
+      em tính là làm xong 7 cái dự án kia xong nhảy qua js học mà th còn 1 cái học nốt nghĩ chắc kh khó lắm ai dè =))
+      js pro chua dong toi nay dau em co the hoc song song nha 
+      dạ vang mà cái dự án 8 này em vẫn ch bt lm sao để mà hiểu cho nó ổn nữa =))
+      hojc dan thoi em co the hoc js pro dc nhe, js no lien quan den tu luy lap trinh
+      cai html css tu duy ve giao dien em nha, 2 cai khac nhau 
+      Em kh biết các bạn khác học cái dự án cuối này thấy khoai giống em kh hay có mỗi mình em á chứ =))
+      yen tam em ko phai duy nhat dau em oi 
+      chắc em ráng coi xong thử làm lại xem hiểu gì kh kh thì chắc đc tới đâu hay tới đó =))
+      ow the code chua xong du an 8 a 
+      bữa h em cứ vừa coi vừa làm xong lỗi tùm lum phải ngồi xem đi xem lại nên hơi mất tg ạ =))
+      code theo cho xong di da roi lam lai sau 
+      dạ cái này em tạo ra là để tự làm lại mà qua na em bị mỗi cái ẩn hiện menu đó mà em kh fix nổi =))u thoi lam tieo di nha !
+      dạ vâng ạ 
+      ủa mà a bth học viên bên mình là đều xem hết làm ht cái dự án 8 này r ms qua hay có ng xem ng kh ạ 
+      a ko bit nay tuy ca nhan ma sao a biet ddc =))) a co ngu duoiw gam giuong nha hocj vien dau ma biet dc =)))
+      à dạ =))) kieu giong em is, a co biet em hojc the nao dau =))
+      ok ạ =))) 
+      uw bye em 
+*/

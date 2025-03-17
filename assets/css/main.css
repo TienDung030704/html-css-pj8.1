@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1203,6 +1204,7 @@ select {
 }
 
 .header-top {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 30px 0px;
@@ -1230,11 +1232,6 @@ select {
   align-items: center;
   column-gap: 30px;
   margin-left: 144px;
-}
-.nav__row {
-  display: flex;
-  align-items: center;
-  column-gap: 6px;
 }
 .nav__row:hover .dropdown {
   display: block;
@@ -1303,6 +1300,57 @@ select {
   cursor: pointer;
 }
 
+/* dc roi day nhe 
+ủa là bị sao ta =))
+  // &__row {
+  //   display: flex;
+  //   align-items: center;
+  //   column-gap: 6px;
+  // }
+  do flex nayno can len giua 
+  em thay chua 
+  dâ rồi ạ 
+  oki nhe a
+  à anh cho em hỏi không biết có cách nào mà tính cái width bên dropdown mà kh cần dùng calc tính kh ạ tại cách đó em thấy khó hỉu =))
+  kiểu có cách nào khác mà kh cần dùng hàm calc kh á anh
+      --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding)* 2);
+      cai nay af 
+      dạ đr
+      tại anh sơn nói nhanh quá em kh hi2bnh dung ra đc tua lại cũng mấy lần r ạ =))
+      chi co set cung thoi n
+      eu là nu61 sét cứng là bnhieu ạ xem figma is height: 582px; ddaay =))
+      là nếu mình kh tính v thì set cứng width height luôn hả a 
+      u
+      CÒn cái padding 30px thì sao ta =)) em de width voi height lam sao cho co car padding 30px no van laf 582px nhe la dc
+      nếu mà thêm 30px nx thì cả 2 giá trị nó sẽ bị thay đổi chứ ạ ko nos tinh taon lam sao cho vua 528px maf  
+      hien tai cua em height 522px r day
+      nma nếu dùng cách vậy thì để nó ra 522 thì nó phải dùng calc để tính toán mà 
+      day thay y het vay la xong 
+      à dạ vậy th để em sửa lại cho nó sét cứng cho dễ =))
+      u nhe 
+      à cái bên tay phải ngoài cùng nó bị dính sát r bh em thêm padding cho cái inner là nó cách ra đc đk ạ
+      u 
+      à dạ rồi ạ cái dự án 8 này em thấy khó vs em quá =))
+      xem lai nhieu lan ms lam dc  nha em oi 
+      em tính là làm xong 7 cái dự án kia xong nhảy qua js học mà th còn 1 cái học nốt nghĩ chắc kh khó lắm ai dè =))
+      js pro chua dong toi nay dau em co the hoc song song nha 
+      dạ vang mà cái dự án 8 này em vẫn ch bt lm sao để mà hiểu cho nó ổn nữa =))
+      hojc dan thoi em co the hoc js pro dc nhe, js no lien quan den tu luy lap trinh
+      cai html css tu duy ve giao dien em nha, 2 cai khac nhau 
+      Em kh biết các bạn khác học cái dự án cuối này thấy khoai giống em kh hay có mỗi mình em á chứ =))
+      yen tam em ko phai duy nhat dau em oi 
+      chắc em ráng coi xong thử làm lại xem hiểu gì kh kh thì chắc đc tới đâu hay tới đó =))
+      ow the code chua xong du an 8 a 
+      bữa h em cứ vừa coi vừa làm xong lỗi tùm lum phải ngồi xem đi xem lại nên hơi mất tg ạ =))
+      code theo cho xong di da roi lam lai sau 
+      dạ cái này em tạo ra là để tự làm lại mà qua na em bị mỗi cái ẩn hiện menu đó mà em kh fix nổi =))u thoi lam tieo di nha !
+      dạ vâng ạ 
+      ủa mà a bth học viên bên mình là đều xem hết làm ht cái dự án 8 này r ms qua hay có ng xem ng kh ạ 
+      a ko bit nay tuy ca nhan ma sao a biet ddc =))) a co ngu duoiw gam giuong nha hocj vien dau ma biet dc =)))
+      à dạ =))) kieu giong em is, a co biet em hojc the nao dau =))
+      ok ạ =))) 
+      uw bye em 
+*/
 html.dark {
   --text-color: var(--header-bg-color);
   --icon-filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
@@ -1327,14 +1375,15 @@ html {
 }
 
 .dropdown {
-  padding-top: 500px;
+  padding-top: 54px;
   position: absolute;
-  left: 37px;
+  left: 0px;
   width: min(1240px, 100%);
   display: none;
 }
 .dropdown__inner {
-  padding: 30px;
+  --inner-padding: 30px;
+  padding: var(--inner-padding);
   position: relative;
   border-radius: 20px;
   background: var(--Secondary-Color-Background, var(--dropdown-bg));
@@ -1349,14 +1398,13 @@ html {
 }
 
 .top-menu {
-  --max-iner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+  width: 1240px;
+  height: 582px;
   position: relative;
-  height: 100%;
 }
 .top-menu__main {
-  height: var(--max-iner-height);
-  width: 292px;
   height: 100%;
+  width: 292px;
   border-right: 1px solid #d2d1d6;
   overflow-y: auto;
 }
@@ -1412,6 +1460,237 @@ html {
   display: grid;
   position: initial;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.slideshow {
+  margin-top: 40px;
+}
+.slideshow__inner {
+  display: flex;
+  overflow: hidden;
+}
+.slideshow__item {
+  width: 100%;
+  position: relative;
+}
+.slideshow__img {
+  width: 100%;
+  height: 100%;
+}
+.slideshow__page {
+  position: absolute;
+  left: 160px;
+  top: 69%;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+.slideshow__number {
+  font-family: Gordita;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 144.444%;
+  color: #fff;
+}
+.slideshow__slider {
+  width: 184px;
+  height: 4px;
+  flex-shrink: 0;
+  background: #fff;
+}
+.slideshow__slider::before {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #77dae6;
+  top: 23%;
+  left: 5%;
+}
+.slideshow__slider::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: #77dae6;
+  top: 18%;
+  left: 203px;
+}
+
+.category {
+  margin-top: 40px;
+}
+.category__heading {
+  font-family: Gordita;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px; /* 141.667% */
+}
+
+.cate-top {
+  margin-top: 20px;
+}
+
+.cate-info__heading {
+  color: #000;
+  font-family: Gordita;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 145.455% */
+}
+.cate-info__desc {
+  font-family: Gordita;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  margin-top: 6px;
+  width: 231px;
+}
+
+.cate-item {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  padding: 20px 26px;
+  border-radius: 16px;
+  background: #eee;
+}
+.cate-item__thumb {
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product {
+  width: 100%;
+  background-color: #eeeeee;
+  margin-top: 40px;
+  padding-bottom: 39px;
+}
+.product__heading {
+  font-family: Gordita;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px; /* 141.667% */
+}
+.product .product-buttons {
+  display: flex;
+  width: 77px;
+  height: 24px;
+  align-items: center;
+  padding: 6px 12px;
+  column-gap: 14px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.product-rows {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.product-rows__menu {
+  color: #6c6c72;
+  font-family: Gordita;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 142.857% */
+}
+
+.product-wrappers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row-margin {
+  margin-top: 21px;
+}
+
+.product-btn {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 239px;
+  left: 242px;
+}
+.product-btn____image {
+  display: flex;
+  align-items: center;
+}
+
+.product-list {
+  padding: 16px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  position: relative;
+}
+.product-list__thumb {
+  width: 280px;
+  height: 284px;
+  object-fit: cover;
+}
+
+.product-item {
+  gap: 16px;
+}
+.product-item__heading {
+  margin-top: 16px;
+  font-family: Gordita;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  width: 280px;
+}
+.product-item__desc {
+  margin-top: 16px;
+  font-family: Gordita;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 146.667% */
+  color: #9e9da8;
+}
+.product-item .product-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.product-item .product-wrap__dollar {
+  font-family: Gordita;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+.product-item .product-star {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+.product-item .product-star__dollar {
+  font-family: Gordita;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
 }
 
 /*# sourceMappingURL=main.css.map */
