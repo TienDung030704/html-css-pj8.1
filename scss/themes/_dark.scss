@@ -1,12 +1,9 @@
 @use "../abstracts";
 html.dark {
-  --text-color: var(--header-bg-color);
-  --icon-filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
-    saturate(1604%) hue-rotate(63deg) brightness(124%) contrast(100%);
-
-  --body-bg: #292e39;
-  --header-bg-color: #171c28;
-  --top-action-group-bg: #292e39;
-  --top-action-group-shadow: rgba(0, 0, 0, 0.2);
-  --top-act-group-separate: #ededf6;
+  // category
+  --bg-category: #171c28;
+  --text-color-heading-cate: #fff;
+  --text-color-desc-cate: #fff;
+  --bg-item-cate: #171c28;
+  --heading-cate-top: #1a162e;
 }

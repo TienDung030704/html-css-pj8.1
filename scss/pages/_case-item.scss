@@ -1,6 +1,7 @@
 @use "../abstracts";
 .category {
   margin-top: 40px;
+
   &__heading {
     font-family: Gordita;
     font-size: 24px;
@@ -14,7 +15,7 @@
 }
 .cate-info {
   &__heading {
-    color: #000;
+    color: var(--text-color-heading-cate);
     font-family: Gordita;
     font-size: 22px;
     font-style: normal;
@@ -28,16 +29,17 @@
     font-weight: 400;
     line-height: 24px; /* 150% */
     margin-top: 6px;
-    width: 231px;
+    color: var(--text-color-desc-cate);
   }
 }
 .cate-item {
+  height: 100%;
   display: flex;
   align-items: center;
   column-gap: 20px;
   padding: 20px 26px;
   border-radius: 16px;
-  background: #eee;
+  background: var(--bg-item-cate);
   &__thumb {
     width: 116px;
     height: 116px;

@@ -1,0 +1,197 @@
+@use "../abstracts";
+.auth {
+  display: flex;
+  height: 100vh;
+  &__intro {
+    padding: 269px 149px;
+    height: 140%;
+    flex: 1;
+    background: #eee;
+    &-desc {
+      text-align: center;
+      width: 412px;
+      font-family: Gordita;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px; /* 144.444% */
+      margin-top: 49px;
+    }
+  }
+  &__content {
+    width: 460px;
+    flex: 1;
+    &-inner {
+      padding: 50px 0;
+      display: flex;
+      flex-direction: column;
+      margin: 50px auto;
+      width: (460px, 100%);
+      align-items: center;
+    }
+    &-heading {
+      text-align: center;
+      font-family: Gordita;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 44px; /* 146.667% */
+      margin-top: 50px;
+    }
+    &-desc {
+      padding: 0 50px;
+      text-align: center;
+      margin-top: 10px;
+      font-family: Gordita;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 22px; /* 146.667% */
+      color: #9e9da8;
+      margin-top: 10px;
+    }
+  }
+  &__error {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+    font-weight: 500;
+    display: none;
+  }
+  &__form {
+    margin-top: 60px;
+
+    &:has(:invalid) &__submit-btn {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  &__text-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 436px;
+    padding: 12px 170px 12px 12px;
+    border-radius: 10px;
+    border: 1px solid #d2d1d6;
+  }
+  &__form-email,
+  &__form-password,
+  &__form-confirm-password {
+    margin-right: 171px;
+    border: none;
+    outline: none;
+    font-family: Gordita;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 144.444% */
+    color: #d2d1d6;
+    background: none;
+  }
+  &__form-input {
+    font-family: Gordita;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 146.667% */
+    color: #9e9da8;
+  }
+  &__form-descript {
+    font-family: Gordita;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 146.667% */
+    color: #0071dc;
+    cursor: pointer;
+  }
+  &__checkbox {
+    margin-right: 137px;
+  }
+  &__group {
+    margin-bottom: 30px;
+  }
+  &__group:has(:invalid):has(&__form-email:not(:placeholder-shown))
+    &__text-input {
+    border-color: red;
+    background: rgba($color: red, $alpha: 0.1);
+    &__error {
+      display: block;
+    }
+  }
+
+  &__group:has(:invalid):has(&__form-password:not(:placeholder-shown))
+    &__text-input {
+    border-color: red;
+    background: rgba($color: red, $alpha: 0.1);
+    &__error {
+      display: block;
+    }
+  }
+  &__group:has(:invalid):has(&__form-confirm-password:not(:placeholder-shown))
+    &__text-input {
+    border-color: red;
+    background: rgba($color: red, $alpha: 0.1);
+  }
+
+  &__group-line {
+    display: flex;
+    align-items: center;
+  }
+  &__btn-text {
+    width: 460px;
+    padding: 12px 204px;
+    text-align: center;
+    color: #1a162e;
+    /* Medium 18 */
+    font-family: Gordita;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 144.444% */
+    cursor: pointer;
+  }
+  &__button {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 460px;
+    padding: 12px 114px;
+    display: flex;
+
+    border-radius: 10px;
+    border: 1px solid #d2d1d6;
+  }
+  &__btn-goggle {
+    color: #1a162e;
+    cursor: pointer;
+    font-family: Gordita;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 144.444% */
+  }
+  &__texting {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 108px;
+    gap: 10px;
+    font-family: Gordita;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 144.444% */
+    color: #9e9da8;
+  }
+  &__link {
+    font-family: Gordita;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 144.444% */
+    color: #0071dc;
+  }
+}

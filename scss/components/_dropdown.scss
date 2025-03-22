@@ -67,14 +67,18 @@
     padding-bottom: 14px;
   }
   &__item {
-    &:hover {
-      color: #0071dc;
+    &:hover .sub-menu {
+      display: grid;
     }
+  }
+  &__item:hover &__link {
+    color: #0071dc;
+    font-weight: 500;
   }
 }
 .sub-menu {
   padding-left: 30px;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(3, 1fr);
   position: absolute;
   inset: 0 0 0 292px;

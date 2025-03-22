@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .header {
   background: var(--header-bg-color);
 }
@@ -8,6 +10,12 @@
   padding: 30px 0px;
 }
 .logo {
+  @include abstracts.breakpoint(md) {
+    margin-left: 113px;
+  }
+  @include abstracts.breakpoint(sm) {
+    margin-left: 51px;
+  }
   display: flex;
   align-items: center;
   column-gap: 14px;
@@ -23,11 +31,23 @@
     line-height: 32px; /* 145.455% */
   }
 }
+.top-bar {
+  &__more {
+    display: none;
+    @include abstracts.breakpoint(lg) {
+      display: block;
+    }
+  }
+}
 .nav {
   display: flex;
   align-items: center;
   column-gap: 30px;
   margin-left: 144px;
+  z-index: 999;
+  @include abstracts.breakpoint(md) {
+    display: none;
+  }
 
   &__row:hover .dropdown {
     display: block;
@@ -96,6 +116,15 @@
     cursor: pointer;
   }
 }
+.btn-primary {
+  font-family: Gordita;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #1a162e;
+}
+
 /* dc roi day nhe 
 ủa là bị sao ta =))
   // &__row {
